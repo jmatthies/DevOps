@@ -1,0 +1,13 @@
+//renames as .old as I destroy/apply. no need to redo this step
+resource "aws_route53_zone" "public" {
+ name       = "public"
+  comment   = "public zone for jonathanmatthies.com"
+  vpc_id    = "${aws_vpc.basic.id}"
+}
+
+resource "aws_route53_zone" "private" {
+  name      = "private"
+  comment   = "private zone for jonathanmatthies.com"
+  vpc_id    = "${aws_vpc.basic.id}"
+}
+
